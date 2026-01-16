@@ -119,14 +119,14 @@ func main() {
 				}
 			}
 			display()
-			// re-check winner in case game state changed (unlikely, but safe)
+			// re-check winner
 			if winner(player) {
 				display()
 				fmt.Println("Player ", string(player), "wins!")
 				break
 			}
 		}
-		// Safety cap to avoid infinite games when moves are continually removed
+		// Safety cap to avoid infinite games.
 		if turn > 100 {
 			fmt.Println("Game ended in a draw (turn limit reached).")
 			break
